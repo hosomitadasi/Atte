@@ -17,7 +17,7 @@
     width: 250px;
     height: 30px;
     border-radius: 3%;
-    color: #f4f4f4;
+    background-color: #f4f4f4;
 }
 
 .register__button-submit {
@@ -35,7 +35,7 @@
     color: #d4d4d4;
 }
 
-.login__link {
+.login__link-tag {
     text-decoration: none;
     color: #244ce4;
     background-color: transparent;

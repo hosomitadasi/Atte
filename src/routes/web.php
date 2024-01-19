@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterdUserController;
 use App\Http\Controllers\AuthenticatedSessionController;
 
 /*
@@ -14,4 +15,5 @@ use App\Http\Controllers\AuthenticatedSessionController;
 |
 */
 
-Route::get('/', [AuthenticatedSessionController::class, 'index']); 
+Route::get('/', [RegisterdUserController::class, 'create']);
+Route::get('/login', [AuthenticatedSessionController::class, 'store'])->route('login.blade.php');

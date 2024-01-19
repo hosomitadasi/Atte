@@ -39,7 +39,7 @@
             <p>アカウントをお持ちの方はこちらから</p>
         </div>
         <div class="login__link">
-            <a class="login" href="login.html">ログイン</a>
+            <a class="login__link-tag" href="login.blade.php" >ログイン</a>
         </div>
     </div>
 </div>
