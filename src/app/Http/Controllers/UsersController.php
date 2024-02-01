@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RegisterdUserController extends Controller
+class UsersController extends Controller
 {
-    public function create()
+    public function view()
     {
         return view('register');
     }

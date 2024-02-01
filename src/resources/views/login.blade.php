@@ -33,9 +33,9 @@
         <div class="register__logo">
             <p>アカウントをお持ちでない方はこちらから</p>
         </div>
-        <div class="register__link">
-            <a class="register__link-logo" href="{{route('register.blade.php')}}">会員登録</a>
-        </div>
+        <form>
+            <a>会員登録</a>
+        </form>
     </div>
 </div>
 @endsection

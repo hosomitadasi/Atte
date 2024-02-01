@@ -38,8 +38,8 @@
         <div class="login__logo">
             <p>アカウントをお持ちの方はこちらから</p>
         </div>
-        <div class="login__link">
-            <a class="login__link-tag" href="login.blade.php" >ログイン</a>
+        <div>
+            <a>ログイン</a>
         </div>
     </div>
 </div>
