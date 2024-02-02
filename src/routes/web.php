@@ -13,4 +13,4 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/', [UsersController::class, 'create']);
+Route::get('/register', [UsersController::class, 'view']);

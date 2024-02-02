@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function view()
+    public function view(Request $request)
     {
         return view('register');
     }
