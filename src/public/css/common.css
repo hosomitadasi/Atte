@@ -9,6 +9,13 @@
     margin: 20px;
 }
 
+.header__link {
+    padding-left: 40px;
+    text-decoration: none;
+    color: black;
+    float: right;
+}
+
 .footer__inner {
     margin: 0 auto;
 }

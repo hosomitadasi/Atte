@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StampController;
+use App\Http\Controllers\DateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +17,8 @@ use App\Http\Controllers\UsersController;
 |
 */
 
-Route::get('/register', [UsersController::class, 'view']);
+Route::get('/register', [UsersController::class, 'create']);
+Route::post('/register', [UsersController::class, 'store']);
+Route::get('/login', [LoginController::class, 'store']);
+Route::get('/stamp', [StampController::class, 'store']);
+Route::get('/data', [DateController::class, 'index']);

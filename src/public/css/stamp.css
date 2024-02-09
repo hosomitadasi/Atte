@@ -1,0 +1,25 @@
+.stamp__form-content {
+    text-align: center;
+    background-color: #f4f4f4;
+    height: 520px;
+}
+
+.stamp__form-heading {
+
+    padding-top: 20px;
+}
+
+.stamp__form-frame {}
+
+.stamp__work {
+    padding: 20px
+}
+
+.stamp__rest {
+    padding: 20px;
+}
+
+.button {
+    width: 200px;
+    height: 150px;
+}

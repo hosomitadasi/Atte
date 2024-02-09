@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="login__content">
-    <form action="/html/data.html" method="get">
+    <form action="/html/stamp" method="get">
         <div class="login__form">
             <div class="login__form-header">
                 <div class="login__form-logo">
@@ -34,7 +34,7 @@
             <p>アカウントをお持ちでない方はこちらから</p>
         </div>
         <form>
-            <a>会員登録</a>
+            <a class="register__link-logo" href="/register">会員登録</a>
         </form>
     </div>
 </div>

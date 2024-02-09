@@ -18,6 +18,7 @@
                 <h2>Atte</h2>
             </div>
         </div>
+        @yield('header')
     </header>
     <main>
         @yield('content')

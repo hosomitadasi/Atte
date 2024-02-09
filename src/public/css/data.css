@@ -1,0 +1,45 @@
+.data__content {
+    margin: 0 auto;
+    padding: 60px;
+    background-color: #f4f4f4;
+    height: 520px;
+}
+
+.time-form {
+    text-align: center;
+}
+
+.time-form__button-submit {
+    border: 1px solid blue;
+    float: left;
+}
+
+.time-form__itme {
+    font-size: 20px;
+}
+
+.time-form__button-submit--right {
+    border: 1px solid blue;
+    float: right;
+}
+
+.data-table {
+}
+
+.data-table__innner {
+    width: 100%;
+}
+
+.table,
+td,
+th {
+    border-bottom: 1px solid black;
+}
+
+.data-table__header {
+    font-size: 20px;
+}
+
+.data-table__item {
+    font-size: 20px;
+}

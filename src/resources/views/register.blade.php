@@ -39,7 +39,7 @@
             <p>アカウントをお持ちの方はこちらから</p>
         </div>
         <div>
-            <a>ログイン</a>
+            <a class="login__link-tag" href="/login">ログイン</a>
         </div>
     </div>
 </div>
