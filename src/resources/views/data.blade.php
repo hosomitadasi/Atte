@@ -6,9 +6,9 @@
 
 @section('header')
 <div class="header__list">
-    <a class="header__link" href="/html/stamp.html">ホーム</a>
-    <a class="header__link" href="/html/data.html">日付一覧</a>
-    <a class="header__link" href="/html/login.html">ログアウト</a>
+    <a class="header__link" href="/stamp">ホーム</a>
+    <a class="header__link" href="/data">日付一覧</a>
+    <a class="header__link" href="/login">ログアウト</a>
 </div>
 @endsection
 

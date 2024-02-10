@@ -9,17 +9,38 @@
     padding-top: 20px;
 }
 
-.stamp__form-frame {}
-
-.stamp__work {
-    padding: 20px
+.stamp__button {
+    padding: 10px;
 }
 
-.stamp__rest {
-    padding: 20px;
-}
-
-.button {
+.work__start {
+    background-color: #ffff;
     width: 200px;
-    height: 150px;
+    height: 100px;
+    color: black;
+    margin: 20px;
+}
+
+.work__stop {
+    background-color: #ffff;
+    width: 200px;
+    height: 100px;
+    color: black;
+    margin: 20px;
+}
+
+.rest__start {
+    background-color: #ffff;
+    width: 200px;
+    height: 100px;
+    color: black;
+    margin: 20px;
+}
+
+.rest__stop {
+    background-color: #ffff;
+    width: 200px;
+    height: 100px;
+    color: black;
+    margin: 20px;
 }

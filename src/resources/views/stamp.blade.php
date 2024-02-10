@@ -6,9 +6,9 @@
 
 @section('header')
 <div class="header__list">
-    <a class="header__link" href="/html/stamp.html">ホーム</a>
-    <a class="header__link" href="/html/data.html">日付一覧</a>
-    <a class="header__link" href="/html/login.html">ログアウト</a>
+    <a class="header__link" href="/stamp">ホーム</a>
+    <a class="header__link" href="/data">日付一覧</a>
+    <a class="header__link" href="/login">ログアウト</a>
 </div>
 @endsection
 
@@ -20,15 +20,13 @@
     </div>
 
     <form class="stamp__form-group">
-        <div class="stamp__form-frame">
-            <div class="stamp__work">
-                <button class="button">勤務開始</button>
-                <button class="button">勤務終了</button>
-            </div>
-            <div class="stamp__rest">
-                <button class="button">休憩開始</button>
-                <button class="button">休憩終了</button>
-            </div>
+        <div class="stamp__button">
+            <button class="work__start">勤務開始</button>
+            <button class="work__stop">勤務終了</button>
+        </div>
+        <div class="stamp__button">
+            <button class="rest__start">休憩開始</button>
+            <button class="rest__stop">休憩終了</button>
         </div>
     </form>
 </div>

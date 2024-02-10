@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\member;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -13,6 +13,7 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        return view('register');
+        $members = member::all();
+        return view('register', ['members' => $members]);
     }
 }

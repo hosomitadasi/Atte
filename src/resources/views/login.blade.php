@@ -6,7 +6,8 @@
 
 @section('content')
 <div class="login__content">
-    <form action="/html/stamp" method="get">
+    <form action="/Stamp/stamp" method="get">
+    @csrf
         <div class="login__form">
             <div class="login__form-header">
                 <div class="login__form-logo">
