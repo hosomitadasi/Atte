@@ -10,18 +10,19 @@
         <h2>会員登録</h2>
     </div>
 
-    <form>
+    <form action="/register" method="post">
+        @csrf
         <div class="register__form-group">
             <div class="register__input">
-                <input type="taxt" name="name" placeholder="名前" />
+                <input type="taxt" name="name" value="{{ $members ?? 'name'}}" placeholder="名前" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="email" placeholder="メールアドレス" />
+                <input type="taxt" name="email" value="{{ $members ?? 'email' }}" placeholder="メールアドレス" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="password" placeholder="パスワード" />
+                <input type="taxt" name="password" value="{{ $members ?? 'password'}}" placeholder="パスワード" />
             </div>
 
             <div class="register__input">

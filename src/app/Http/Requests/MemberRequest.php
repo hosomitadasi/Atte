@@ -25,7 +25,7 @@ class MemberRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max191',
-            'e-mail' => 'required|email|max191',
+            'email' => 'required|email|max191',
             'password' => 'required|min:8|max:16'
         ];
     }

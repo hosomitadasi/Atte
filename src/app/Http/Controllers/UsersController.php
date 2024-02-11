@@ -13,7 +13,8 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $members = member::all();
-        return view('register', ['members' => $members]);
+        $members = $request->only(['name', 'email', 'password']);
+        Member::create($members);
+        return view('register', compact('members'));
     }
 }

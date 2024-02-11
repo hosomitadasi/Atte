@@ -9,6 +9,8 @@ class member extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'name', 'e-mail', 'password'
+        'name', 
+        'e-mail', 
+        'password'
     ];
 }
