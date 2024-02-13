@@ -14,15 +14,15 @@
         @csrf
         <div class="register__form-group">
             <div class="register__input">
-                <input type="taxt" name="name" value="{{ $members ?? 'name'}}" placeholder="名前" />
+                <input type="taxt" name="name" value="{{ $members ?? ('name') }}" placeholder="名前" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="email" value="{{ $members ?? 'email' }}" placeholder="メールアドレス" />
+                <input type="taxt" name="email" value="{{ $members ??('email')  }}" placeholder="メールアドレス" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="password" value="{{ $members ?? 'password'}}" placeholder="パスワード" />
+                <input type="taxt" name="password" value="{{ $members  ?? ('password') }}" placeholder="パスワード" />
             </div>
 
             <div class="register__input">
@@ -32,6 +32,7 @@
             <div class="register__button">
                 <button class="register__button-submit" type="submit">会員登録</button>
             </div>
+
         </div>
     </form>
 
@@ -40,7 +41,7 @@
             <p>アカウントをお持ちの方はこちらから</p>
         </div>
         <div>
-            <a class="login__link-tag" href="/login">ログイン</a>
+            <a class="login__link-tag" href="login">ログイン</a>
         </div>
     </div>
 </div>

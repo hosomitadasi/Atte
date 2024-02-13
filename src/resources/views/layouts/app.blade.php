@@ -12,12 +12,10 @@
 </head>
 
 <body>
-    <header>
-        <div class="header__inner">
+    <header class="header__inner">
             <div class="header__logo">
                 <h2>Atte</h2>
             </div>
-        </div>
         @yield('header')
     </header>
     <main>

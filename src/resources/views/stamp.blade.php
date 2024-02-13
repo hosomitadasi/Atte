@@ -15,13 +15,13 @@
 @section('content')
 <div class="stamp__form-content">
     <div class="stamp__form-heading">
-        <h2>○○さんお疲れ様です！</h2>
+        <h2>さんお疲れ様です！</h2>
         <!--ここにログインした人の名前も表示-->
     </div>
 
     <form class="stamp__form-group">
         <div class="stamp__button">
-            <button class="work__start">勤務開始</button>
+            <button class="work__start label">勤務開始</button>
             <button class="work__stop">勤務終了</button>
         </div>
         <div class="stamp__button">

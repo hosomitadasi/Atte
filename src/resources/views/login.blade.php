@@ -6,8 +6,8 @@
 
 @section('content')
 <div class="login__content">
-    <form action="/Stamp/stamp" method="get">
-    @csrf
+    <form action="/stamp" method="get">
+        @csrf
         <div class="login__form">
             <div class="login__form-header">
                 <div class="login__form-logo">
@@ -16,11 +16,11 @@
             </div>
 
             <div class="login__form-input">
-                <input type="text" name="email" placeholder="メールアドレス">
+                <input type="text" name="email" value="{{ $members ??('email')  }}" placeholder="メールアドレス">
             </div>
 
             <div class="login__form-input">
-                <input type="text" name="password" placeholder="パスワード">
+                <input type="text" name="password" value="{{ $members  ?? ('password') }}" placeholder="パスワード">
             </div>
 
             <div class="login__button">
@@ -35,7 +35,7 @@
             <p>アカウントをお持ちでない方はこちらから</p>
         </div>
         <form>
-            <a class="register__link-logo" href="/register">会員登録</a>
+            <a class="register__link-logo" href="register">会員登録</a>
         </form>
     </div>
 </div>
