@@ -13,10 +13,27 @@
 
 <body>
     <header class="header__inner">
-            <div class="header__logo">
-                <h2>Atte</h2>
-            </div>
-        @yield('header')
+        <div class="header__logo">
+            <h2>Atte</h2>
+        </div>
+        <nav>
+            <ul class="header-nav">
+                @if (Auth::check())
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="/stamp">ホーム</a>
+                </li>
+                <li class="header-nav__item">
+                    <a class="header-nav__link" href="/data">日付一覧</a>
+                </li>
+                <li class="header-nav__item">
+                    <form class="form" action="/logout" method="post">
+                        @csrf
+                        <button class="header-nav__button">ログアウト</button>
+                    </form>
+                </li>
+                @endif
+            </ul>
+        </nav>
     </header>
     <main>
         @yield('content')

@@ -1,19 +1,42 @@
+html,
+body,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+form,
+input,
+div {
+    margin: 0;
+    padding: 0;
+}
+
 .header__inner {
-    margin: 0 auto;
     max-width: 1230px;
-    height: 60px;
+    height: 90px;
 }
 
 .header__logo {
+    float: left;
     font-size: 24px;
-    margin: 20px;
+    padding: 20px 40px;
+}
+
+.header__list {
+    float: right;
+    padding: 30px 40px;
 }
 
 .header__link {
-    padding-left: 40px;
     text-decoration: none;
     color: black;
-    float: right;
+    padding-left: 40px;
 }
 
 .footer__inner {

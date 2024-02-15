@@ -6,7 +6,7 @@
 
 @section('content')
 <div class="login__content">
-    <form action="/stamp" method="get">
+    <form action="/login" method="post">
         @csrf
         <div class="login__form">
             <div class="login__form-header">
@@ -16,11 +16,11 @@
             </div>
 
             <div class="login__form-input">
-                <input type="text" name="email" value="{{ $members ??('email')  }}" placeholder="メールアドレス">
+                <input type="email" name="email" value="{{ old('email')  }}" placeholder="メールアドレス">
             </div>
 
             <div class="login__form-input">
-                <input type="text" name="password" value="{{ $members  ?? ('password') }}" placeholder="パスワード">
+                <input type="password" name="password" placeholder="パスワード">
             </div>
 
             <div class="login__button">

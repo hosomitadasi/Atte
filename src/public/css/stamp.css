@@ -13,12 +13,16 @@
     padding: 10px;
 }
 
-.work__start {
+.work__start label {
     background-color: #ffff;
     width: 200px;
     height: 100px;
     color: black;
     margin: 20px;
+}
+.work__start input:checked+label { 
+    background-color: #ffff;
+    color: #999999;
 }
 
 .work__stop {

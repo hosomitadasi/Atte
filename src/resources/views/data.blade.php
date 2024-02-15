@@ -4,14 +4,6 @@
 <link rel="stylesheet" href="{{ asset('css/data.css') }}">
 @endsection
 
-@section('header')
-<div class="header__list">
-    <a class="header__link" href="/stamp">ホーム</a>
-    <a class="header__link" href="/data">日付一覧</a>
-    <a class="header__link" href="/login">ログアウト</a>
-</div>
-@endsection
-
 @section('content')
 <div class="data__content">
     <form class="time-form">

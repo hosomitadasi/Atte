@@ -14,19 +14,19 @@
         @csrf
         <div class="register__form-group">
             <div class="register__input">
-                <input type="taxt" name="name" value="{{ $members ?? ('name') }}" placeholder="名前" />
+                <input type="taxt" name="name" value="{{ old ('name') }}" placeholder="名前" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="email" value="{{ $members ??('email')  }}" placeholder="メールアドレス" />
+                <input type="email" name="email" value="{{ old('email')  }}" placeholder="メールアドレス" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="password" value="{{ $members  ?? ('password') }}" placeholder="パスワード" />
+                <input type="password" name="password" placeholder="パスワード" />
             </div>
 
             <div class="register__input">
-                <input type="taxt" name="confirmation--password" placeholder="確認用パスワード" />
+                <input type="password" name="password_confirmation" placeholder="確認用パスワード" />
             </div>
 
             <div class="register__button">
