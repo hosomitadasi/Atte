@@ -15,7 +15,7 @@ class CreateTimesTable extends Migration
     {
         Schema::create('times', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('member_id')->constrained('members');
+            $table->foreignId('member_id')->constrained('members')->cascadeOnDelete();
             $table->timestamp('work-start')->useCurrent()->nullable();
             $table->timestamp('work-stop')->useCurrent()->nullable();
             $table->timestamp('month-days')->useCurrent()->nullable();

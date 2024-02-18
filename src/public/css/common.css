@@ -1,42 +1,36 @@
-html,
-body,
-ul,
-ol,
-li,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-form,
-input,
-div {
-    margin: 0;
-    padding: 0;
+.header {
+    background: #fff;
 }
 
 .header__inner {
-    max-width: 1230px;
-    height: 90px;
+    margin: 0 auto;
+    height: 80px;
 }
+
+.header__content {}
 
 .header__logo {
+    color: #000;
     float: left;
-    font-size: 24px;
-    padding: 20px 40px;
+    font-size: 20px;
 }
 
-.header__list {
-    float: right;
-    padding: 30px 40px;
+.header-nav {
+    display: flex;
+    justify-content: space-between;
 }
 
-.header__link {
+.header-nav__link {
+    color: #000;
     text-decoration: none;
-    color: black;
-    padding-left: 40px;
+}
+
+.header-nav__button {
+    border: none;
+    background: transparent;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 .footer__inner {

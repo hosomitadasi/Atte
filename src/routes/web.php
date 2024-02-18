@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\StampController;
 use App\Http\Controllers\DateController;
@@ -16,8 +17,10 @@ use App\Http\Controllers\DateController;
 |
 */
 
-Route::middleware('auth')->group(function() {
-    Route::get('/', [UsersController::class, 'index']);
-});
-Route::get('/stamp', [StampController::class, 'store']);
-Route::get('/data', [DateController::class, 'index']);
+Route::middleware('auth')->group(function () {
+     Route::get('/', [AuthController::class, 'index']);
+ });
+Route::get('/auth/register', [RegisterController::class, 'create']);
+Route::post('/auth/register', [RegisterController::class, 'store']);
+
+ Route::get('/data', [DateController::class, 'index']);

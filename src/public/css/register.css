@@ -1,33 +1,51 @@
-.register__form-content {
+.register__content {
+    margin: 0 auto;
+    padding: 30px 15px;
+    background: #f4f4f4;
+    height: 500px;
+}
+
+.register-form__heading {
+    margin-bottom: 20px;
     text-align: center;
-    background-color: #f4f4f4;
-    height: 520px;
 }
 
-.register__form-logo {
-    padding-top: 20px;
+.form {
+    margin: 0 auto;
+    text-align: center;
 }
 
-.register__form-group {
+.form__group {
+    margin-bottom: 20px;
+}
+
+.form__input--text input {
+    padding: 10px;
+    width: 250px;
+    height: 30px;
+    border: 1px solid #000;
+    border-radius: 3px;
+    background: #f4f4f4;
+    appearance: none;
+}
+
+.form__button {
     margin-top: 20px;
 }
 
-.register__input input {
-    margin: 10px;
+.form__button-submit {
+    padding: 10px;
     width: 250px;
     height: 30px;
-    border-radius: 3%;
-    background-color: #f4f4f4;
+    border: none;
+    border-radius: 3px;
+    background: #244ce4;
+    color: #fff;
 }
 
-.register__button-submit {
-    margin: 10px;
-    width: 250px;
-    height: 30px;
-    background-color: #244ce4;
-    color: #fff;
-    border-radius: 5%;
-    border: 1px solid #2c74bc;
+.login__link {
+    margin: 20px;
+    text-align: center;
 }
 
 .login__logo {
@@ -35,7 +53,7 @@
     color: #d4d4d4;
 }
 
-.login__link-tag {
+.login__button-submit {
     text-decoration: none;
     color: #244ce4;
     background-color: transparent;
