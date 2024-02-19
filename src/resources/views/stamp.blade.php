@@ -11,15 +11,19 @@
         <!--ここにログインした人の名前も表示-->
     </div>
 
-    <form class="stamp__form-group">
-        <div class="stamp__button">
-            <button class="work__start label">勤務開始</button>
-            <button class="work__stop">勤務終了</button>
-        </div>
-        <div class="stamp__button">
-            <button class="rest__start">休憩開始</button>
-            <button class="rest__stop">休憩終了</button>
-        </div>
-    </form>
+    <div class="stamp__form-group">
+        <form class="stamp__button-work">
+            <button class="stamp__button-submit" type="submit">勤務開始</button>
+
+            <button class="stamp__button-submit" type="submit">勤務終了</button>
+        </form>
+
+
+        <form class="stamp__button-rest">
+            <button class="stamp__button-submit" type="submit">休憩開始</button>
+
+            <button class="stamp__button-submit" type="submit">休憩終了</button>
+        </form>
+    </div>
 </div>
 @endsection
