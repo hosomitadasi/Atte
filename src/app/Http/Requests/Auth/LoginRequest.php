@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Auth;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TimeRequest extends FormRequest
+class LoginRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TimeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,9 +24,8 @@ class TimeRequest extends FormRequest
     public function rules()
     {
         return [
-            'work-start' => 'timezone',
-            'work-stop' => 'timezone',
-            'month-days' => 'date'
+            'email' => 'required|string|email',
+            'password' => 'required|string',
         ];
     }
 }

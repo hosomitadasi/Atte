@@ -1,26 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\UsersController;
-use App\Http\Controllers\StampController;
-use App\Http\Controllers\DateController;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\WorkController;
+use App\Http\Controllers\RestController;
 
 Route::middleware('auth')->group(function () {
-     Route::get('/', [AuthController::class, 'index']);
- });
-Route::get('/auth/register', [RegisterController::class, 'create']);
-Route::post('/auth/register', [RegisterController::class, 'store']);
+    Route::get('/logiout', [UserController::class, 'getLogout']);
 
- Route::get('/data', [DateController::class, 'index']);
+    Route::get('/', [WorkController::class, 'getIndex']);
+
+    Route::get('/work/start', [WorkController::class, 'startWork']);
+    Route::get('/work/end', [WorkController::class, 'endWork']);
+
+    Route::get('/break/start', [RestController::class, 'startRest']);
+    Route::get('/break/end', [RestController::class, 'endRest']);
+
+    Route::get('/work/{num}', [WorkController::class, 'getWork']);
+});
+
+Route::get('/register', [UserController::class, 'getRegister']);
+Route::post('/register', [UserController::class, 'postRegister']);
+
+Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
+Route::post('/login', [UserController::class, 'postLogin']);
