@@ -3,7 +3,7 @@
 @section('content')
 <div class="date-content">
     <a class="arrow" href="{!! '/work/' . ($num - 1) !!}">&it;</a>
-    <p class="date">日付欄</p>
+    <p class="date">{{ $fixed_date }}</p>
     <a class="arrow" href="{!! '/work/' . ($num + 1) !!}">&it;</a>
 </div>
 
@@ -25,6 +25,6 @@
     </tr>
     @endforeach
 </table>
-{{ $adjustWork->links('pagination::default') }}
+{{ $adjustWorks->links('pagination::default') }}
 
 @endsection

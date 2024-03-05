@@ -26,7 +26,9 @@
     margin-right: 60px;
 }
 
-.header-nav-itam:not(:last-child) {}
+.header-nav-itam:not(:last-child) {
+    margin-right: 30px;
+}
 
 .header-nav-item a {
     color: #000000;
@@ -46,9 +48,7 @@
     font-size: 24px;
 }
 
-.input-content,
-.input-button,
-.transition-text {
+.input-content,.input-button,.transition-text {
     margin-top: 20px;
 }
 
@@ -107,7 +107,7 @@
     cursor: pointer;
 }
 
-.inctiv {
+.inactive {
     color: #e5e5e5;
     cursor: default;
 }
@@ -121,6 +121,35 @@
     align-items: center;
     position: fixed;
     bottom: 0;
+}
+
+.date-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date {
+    font-size: 24px;
+    margin: 0 20px;
+}
+
+.arrow {
+    background-color: #ffffff;
+    color: #214be0;
+    border: 1px solid #214be0;
+    text-decoration: none;
+    padding: 3px 10px;
+}
+
+table {
+    width: 100px;
+    margin-top: 40px;
+}
+
+th, td {
+    border-top: 1px solid #000000;
+    padding: 25px 0;
 }
 
 .footer-logo {

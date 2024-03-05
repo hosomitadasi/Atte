@@ -6,7 +6,7 @@ use App\Http\Controllers\WorkController;
 use App\Http\Controllers\RestController;
 
 Route::middleware('auth')->group(function () {
-    Route::get('/logiout', [UserController::class, 'getLogout']);
+    Route::get('/logout', [UserController::class, 'getLogout']);
 
     Route::get('/', [WorkController::class, 'getIndex']);
 
