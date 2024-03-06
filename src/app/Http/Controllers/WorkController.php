@@ -19,7 +19,7 @@ class WorkController extends Controller
 
         $rest = $work->rests->whereNull("end_time")->first();
 
-        if ($work->start_time) {
+        if ($work->end_time) {
             return view('stamp')->with([
                 "is_work_start" => true,
                 "is_work_end" => true,
@@ -85,9 +85,9 @@ class WorkController extends Controller
         }
         $fixed_date = $date->toDateString();
 
-        $work = Wrok::where('date', $fixed_date)->paginate(5);
+        $works = Wrok::where('date', $fixed_date)->paginate(5);
 
-        $adjustWork = Work::adjustWork($work);
+        $adjustWorks = Work::adjustWork($works);
 
         return view('date', compact("adjustWorks", "num", "fixed_date"));
     }

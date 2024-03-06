@@ -37,9 +37,9 @@ class Work extends Model
         return $work;
     }
 
-    public function adjustWork($work)
+    public function adjustWork($works)
     {
-        foreach ($work as $index => $work) {
+        foreach ($works as $index => $work) {
             $rests = $work->rests;
             $sum = 0;
             foreach ($rests as $rest) {
