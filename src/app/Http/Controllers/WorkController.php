@@ -40,6 +40,7 @@ class WorkController extends Controller
             }
         }
     }
+    //打刻ページの表示関連
 
     public function startWork()
     {
@@ -85,7 +86,7 @@ class WorkController extends Controller
         }
         $fixed_date = $date->toDateString();
 
-        $works = Wrok::where('date', $fixed_date)->paginate(5);
+        $works = Work::where('date', $fixed_date)->paginate(5);
 
         $adjustWorks = Work::adjustWork($works);
 

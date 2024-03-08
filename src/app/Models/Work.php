@@ -69,8 +69,8 @@ class Work extends Model
 
             $time_work = Carbon::createFromTime($work_hours, $work_minutes, $work_seconds);
 
-            $work[$index]->rest_sum = $time_dt->toTimeString();
-            $work[$index]->work_time = $time_work->toTimeString();
+            $works[$index]->rest_sum = $time_dt->toTimeString();
+            $works[$index]->work_time = $time_work->toTimeString();
         }
         return $work;
     }
