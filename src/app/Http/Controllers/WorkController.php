@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Work;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -73,7 +74,7 @@ class WorkController extends Controller
         勤務終了しました');
     }
 
-    public function getWork(Request $request)
+    public  function getWork(Request $request)
     {
         $num = (int)$request->num;
         $dt = new Carbon();
@@ -91,5 +92,16 @@ class WorkController extends Controller
         $adjustWorks = Work::adjustWork($works);
 
         return view('date', compact("adjustWorks", "num", "fixed_date"));
+    }
+
+    public function indexUser() 
+    {
+        $users = User::all();
+        return view('user', ['users' => $users]);
+    }
+
+    public function getUserdate()
+    {
+        return view('userdate');
     }
 }

@@ -37,7 +37,7 @@ class Work extends Model
         return $work;
     }
 
-    public function adjustWork($works)
+    public static function adjustWork($works)
     {
         foreach ($works as $index => $work) {
             $rests = $work->rests;
@@ -72,6 +72,11 @@ class Work extends Model
             $works[$index]->rest_sum = $time_dt->toTimeString();
             $works[$index]->work_time = $time_work->toTimeString();
         }
-        return $work;
+        return $works;
+    }
+
+    public static function adjustUser($user)
+    {
+
     }
 }

@@ -17,7 +17,7 @@
     @endif
 
     @if(!isset($is_work_end))
-    <a href="/work/stop" class="time-button">勤務終了</a>
+    <a href="/work/end" class="time-button">勤務終了</a>
     @else
     <p class="time-button inactive">勤務終了</p>
     @endif

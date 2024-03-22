@@ -16,7 +16,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/break/start', [RestController::class, 'startRest']);
     Route::get('/break/end', [RestController::class, 'endRest']);
 
-    Route::get('/work/{num}', [WorkController::class, 'getWork']);
+    Route::get('/date/{num}', [WorkController::class, 'getWork']);
+
+    Route::get('user', [WorkController::class, 'indexUser']);
+    
 });
 
 Route::get('/register', [UserController::class, 'getRegister']);
