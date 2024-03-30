@@ -94,14 +94,37 @@ class WorkController extends Controller
         return view('date', compact("adjustWorks", "num", "fixed_date"));
     }
 
-    public function indexUser() 
+    public function indexUser()
     {
-        $users = User::all();
-        return view('user', ['users' => $users]);
+        $id = Auth::id();
+
+        $users = User::paginate(5);
+        $displayDate = Carbon::now();
+
+        return view('user', compact('users', 'displayDate'));
     }
 
-    public function getUserdate()
+    public function showUser(Request $request)
     {
-        return view('userdate');
+        $displayUsesr = Auth::user()->name;
+
+        $num = (int)$request->num;
+        $dt = new Carbon();
+        if ($num == 0) {
+            $date = $dt;
+        } elseif ($num > 0) {
+            $date = $dt->addDays($num);
+        } else {
+            $date = $dt->subDays(-$num);
+        }
+        $fixed_date = $date->toDateString();
+
+        $works = Work::where('date', $fixed_date)->paginate(5);
+
+        $adjustWorks = Work::adjustWork($works);
+
+        $usesrList = User::all();
+
+        return view('userdate', compact('displayUsesr', 'adjustWorks', 'num', 'fixed_date', 'usesrList'));
     }
 }

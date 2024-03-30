@@ -75,8 +75,4 @@ class Work extends Model
         return $works;
     }
 
-    public static function adjustUser($user)
-    {
-
-    }
 }

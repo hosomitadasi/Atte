@@ -51,4 +51,20 @@ class UserController extends Controller
         Auth::logout();
         return redirect("login");
     }
+
+    public function create(Request $request)
+    {
+        $userService = new UserService();
+        $userService->create($request);
+
+        $tokenService = new TokenService();
+        $tokenService->create($request);
+
+        $email = $request->email;
+        $url = request()->getSchemeAndHttpHost(). "/user/register?token=". $tokenService->getToken();
+
+        Mail::to($email)->send(new AuthMail($url));
+
+        return redirect('register')->with('email', $email);
+    }
 }
