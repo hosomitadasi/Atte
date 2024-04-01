@@ -28,13 +28,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/break/end', [RestController::class, 'endRest']);
 
     Route::get('/date/{num}', [WorkController::class, 'getwork']);
+
+    Route::get('/user', [WorkController::class, 'indexUser']);
+    Route::get('/userdate', [WorkController::class, 'showUser']);
 });
 
 Route::get('/register', [UserController::class, 'getRegister']);
 Route::post('/register', [UserController::class, 'postRegister']);
 
-Route::get('/login', [UsesrController::class, 'getLogin'])->name('login');;
-Route::post('/login', [UsesrController::class, 'postLogin']);
+Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
+Route::post('/login', [UserController::class, 'postLogin']);
 
 Route::controller(EmailVerificationController::class)
     ->prefix('email')->name('verification.')->group(function () {
