@@ -13,7 +13,13 @@
         <th class="date-item">勤務時間</th>
     </tr>
     <tr>
-       
+        @foreach($user as $user)
+        <td class="date-item">{{ $user->date }}</td>
+        <td class="date-item">{{ $user->date }}</td>
+        <td class="date-item">{{ $user->date }}</td>
+        <td class="date-item">{{ $user->date }}</td>
+        <td class="date-item">{{ $user->date }}</td>
+        @endforeach
     </tr>
 </table>
 @endsection
