@@ -100,15 +100,19 @@ class WorkController extends Controller
 
         $users = User::paginate(5);
        
-
         return view('user', compact('users'));
     }
 
-    public function showUser(Request $request)
+    public function showUser($id)
     {
-        $displayUser = Auth::user()->name;
-        $users = Work::all();
+        $post = Work::where('id', $id)->first();
 
-        return view('userdate', compact('displayUser', 'users'));
+        $username = Work::where('name');
+
+        $works = Work::where('date');
+
+        $users = Work::adjustWork($works);
+
+        return view('userdate', compact('post', 'username', 'works', 'users'));
     }
 }

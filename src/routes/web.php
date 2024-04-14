@@ -30,7 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/date/{num}', [WorkController::class, 'getwork']);
 
     Route::get('/user', [WorkController::class, 'indexUser']);
-    Route::get('/userdate', [WorkController::class, 'showUser']);
+    Route::get('/userdate/{id}', [WorkController::class, 'showUser'])->name('userdate');
 });
 
 Route::get('/register', [UserController::class, 'getRegister']);

@@ -10,7 +10,7 @@
         @foreach ($users as $user)
         <tr>
             <td>{{ $user->id }}</td>
-            <td><a href="/userdate">{{ $user->name }}</a></td>
+            <td><a href="{{ route('userdate', ['id']) }}">{{ $user->name }}</a></td>
         </tr>
         @endforeach
     </table>

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<p class="welcome">{{ $displayUser }}さんお疲れ様です！</p>
+<p class="welcome">{{ $username }}さんお疲れ様です！</p>
 
 <table class="date-table">
     <tr>
@@ -13,12 +13,12 @@
         <th class="date-item">勤務時間</th>
     </tr>
     <tr>
-        @foreach($user as $user)
-        <td class="date-item">{{ $user->date }}</td>
-        <td class="date-item">{{ $user->date }}</td>
-        <td class="date-item">{{ $user->date }}</td>
-        <td class="date-item">{{ $user->date }}</td>
-        <td class="date-item">{{ $user->date }}</td>
+        @foreach($works as $work)
+        <td class="date-item">{{ $work->date }}</td>
+        <td class="date-item">{{ $work->start_time }}</td>
+        <td class="date-item">{{ $work->end_time }}</td>
+        <td class="date-item">{{ $work->rest_sum }}</td>
+        <td class="date-item">{{ $work->work_time }}</td>
         @endforeach
     </tr>
 </table>
