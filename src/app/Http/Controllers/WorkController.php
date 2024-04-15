@@ -105,14 +105,10 @@ class WorkController extends Controller
 
     public function showUser($id)
     {
-        $post = Work::where('id', $id)->first();
+        $user = User::findOrFail($id);
 
-        $username = Work::where('name');
+        $works = Work::find('date', 'start_time', 'end_time');
 
-        $works = Work::where('date');
-
-        $users = Work::adjustWork($works);
-
-        return view('userdate', compact('post', 'username', 'works', 'users'));
+        return view('userdate', compact('user', 'works'));
     }
 }

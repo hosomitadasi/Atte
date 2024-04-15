@@ -8,6 +8,7 @@
 </div>
 
 <table class="date-table">
+@csrf
     <tr>
         <th class="date-item">名前</th>
         <th class="date-item">勤務開始</th>

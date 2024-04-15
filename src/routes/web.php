@@ -34,23 +34,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/register', [UserController::class, 'getRegister']);
-Route::middleware(['web', 'verified', 'auth']); {
-    
-    Route::controller(EmailVerificationController::class)
-    ->prefix('email')->name('verification.')->group(function () {
-        // 確認メール送信画面
-        Route::get('verify', 'index')->name('notice');
-        // 確認メール送信
-        Route::post('verification-notification', 'notification')
-        ->middleware('throttle:6,1')->name('send');
-        // 確認メールリンクの検証
-        Route::get('verification/{id}/{hash}', 'verification')
-        ->middleware(['signed', 'throttle:6,1'])->name('verify');
-    });
-
-    Route::post('/register', [UserController::class, 'postRegister']);
-}
-
+Route::post('/register', [UserController::class, 'postRegister']);
 
 Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
 Route::post('/login', [UserController::class, 'postLogin']);
