@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
+use App\Mail\RegisterMail;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,6 +25,7 @@ class UserController extends Controller
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
+            Mail::send(new RegisterMail($request));
             return redirect('login')->with('result', '会員登録が完了しました');
         } catch (\Throwable $th) {
             return redirect('register')->with('result', 'エラーが発生しました');
