@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\MailSendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\RestController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +36,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/register', [UserController::class, 'getRegister']);
 Route::post('/register', [UserController::class, 'postRegister']);
+
+Route::get('/mail', [MailSendController::class, 'index']);
 
 Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
 Route::post('/login', [UserController::class, 'postLogin']);

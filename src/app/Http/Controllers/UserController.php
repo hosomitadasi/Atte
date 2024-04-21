@@ -16,28 +16,7 @@ class UserController extends Controller
     }
     //会員登録画面表示
 
-    public function create(Request $request)
-    {
-        User::create([
-            'name' => $request['name'],
-            'email' => $request['email'],
-            'password' => Hash::make($request['password']),
-        ]);
-        //データの保存
-
-        $tokenService = new TokenService();
-        $tokenService ->create($request);
-        //トークンの発行
-
-        $email = $request->email;
-        $url = request()->getSchemeAndHttpHost(). "/user/register?token=". $tokenService->getToken();
-
-        Mail::to($email)->send(new AuthMail($url));
-        //メール送信
-
-        return redirect('login')->with('email', $email, 'result', '会員登録が完了しました');
-        //ログイン画面へリダイレクト
-    }
+    
 
     public function postRegister(RegisterRequest $request)
     {

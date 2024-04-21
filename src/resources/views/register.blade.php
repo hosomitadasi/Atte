@@ -8,7 +8,7 @@
 @endif
 
 <h2 class="main-logo">会員登録</h2>
-<form action="{{route('user.register')}}" method="post">
+<form action="register" method="post">
     @csrf
     <div class="input-content">
         <input type="text" placeholder="名前" name="name" value="{{ old('name') }}">
