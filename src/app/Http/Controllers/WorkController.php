@@ -103,9 +103,15 @@ class WorkController extends Controller
         return view('user', compact('users'));
     }
 
-    public function showUser($id)
+    public function showUser($id, Request $request)
     {
         $user = User::findOrFail($id);
+
+        $num = (int)$request->num;
+        $dt = new Carbon();
+        if ($num == 0) {
+            $data = $dt;
+        }
 
         $works = Work::find('date', 'start_time', 'end_time');
 

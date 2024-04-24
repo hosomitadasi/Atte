@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use PhpParser\Node\Stmt\Foreach_;
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -29,18 +30,18 @@ class FortifyServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Fortify::createUsersUsing(CreateNewUser::class);
-        Fortify::registerView(function () {
-            return view('auth.register');
-        });
+        Fortify::updateUserProfileInformationUsin(UpdateUserProfileInformation::class);Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         Fortify::loginView(function () {
             return view('auth.login');
         });
 
-        RateLimiter::for('login', function (Request $request) {
-            $email = (string) $request->email;
+        Fortify::registerView(function() {
+            return view('auth.register');
+        });
 
-            return Limit::perMinute(10)->by($email . $request->ip());
+        Fortify::verifyEmailView(function () {
+            return view('auth.verify-email');
         });
     }
 }
