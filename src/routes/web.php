@@ -36,8 +36,18 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/register', [UserController::class, 'getRegister']);
 Route::post('/register', [UserController::class, 'postRegister']);
+Route::match(['get','post'], 'register/verify/{token}', 'Auth\RegisterController@verify');
 
-Route::get('/mail', [MailSendController::class, 'send']);
 
 Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
 Route::post('/login', [UserController::class, 'postLogin']);
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
