@@ -17,7 +17,7 @@ use App\Http\Controllers\RestController;
 |
 */
 
-Route::middleware('auth')->group(function () {
+Route::middleware(['verified'])->group(function () {
     Route::get('/logout', [UserController::class, 'getLogout']);
 
     Route::get('/', [WorkController::class, 'getIndex']);
