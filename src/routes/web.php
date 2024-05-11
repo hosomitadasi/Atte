@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\MailSendController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
@@ -17,7 +16,7 @@ use App\Http\Controllers\RestController;
 |
 */
 
-Route::middleware(['verified'])->group(function () {
+Route::middleware('auth')->group(function () {
     Route::get('/logout', [UserController::class, 'getLogout']);
 
     Route::get('/', [WorkController::class, 'getIndex']);
@@ -36,18 +35,6 @@ Route::middleware(['verified'])->group(function () {
 
 Route::get('/register', [UserController::class, 'getRegister']);
 Route::post('/register', [UserController::class, 'postRegister']);
-Route::match(['get','post'], 'register/verify/{token}', 'Auth\RegisterController@verify');
-
 
 Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
 Route::post('/login', [UserController::class, 'postLogin']);
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});

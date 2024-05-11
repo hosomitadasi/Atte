@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\Events\Registered;
 
 class UserController extends Controller
 {
@@ -21,11 +22,14 @@ class UserController extends Controller
     public function postRegister(RegisterRequest $request)
     {
         try {
-            User::create([
+            $user = User::create([
                 'name' => $request['name'],
                 'email' => $request['email'],
                 'password' => Hash::make($request['password']),
             ]);
+
+            event(new Registered($user));
+
             return redirect('login')->with('result', '会員登録が完了しました');
         } catch (\Throwable $th) {
             return redirect('register')->with('result', 'エラーが発生しました');
