@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\RestController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,27 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/date/{num}', [WorkController::class, 'getwork']);
 
-    Route::get('/user', [WorkController::class, 'indexUser']);
-    Route::get('/userdate/{id}', [WorkController::class, 'showUser'])->name('userdate');
+    Route::get('/users.index', [UserController::class, 'index']);
+    Route::get('/users/{userId}/attendance/{month}', [UserController::class, 'showMonthlyAttendance']);
 });
 
 Route::get('/register', [UserController::class, 'getRegister']);
-Route::post('/register', [UserController::class, 'postRegister']);
 
-Route::get('/login', [UserController::class, 'getLogin'])->name('login');;
+Route::middleware(['auth'])->group(function () {
+    Route::get('/email/verify', function () {
+        return view('auth.verify-email');
+    })->name('verification.notice');
+
+    Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+        $request->fulfill();
+        return redirect('/dashboard');
+    })->middleware(['signed'])->name('verification.verify');
+
+    Route::post('/email/verification-notification', function (Request $request) {
+        $request->user()->sendEmailVerificationNotification();
+        return back()->with('message', 'Verification link sent!');
+    })->middleware(['throttle:6,1'])->name('verification.send');
+});
+
+Route::get('/login', [UserController::class, 'getLogin'])->name('login');
 Route::post('/login', [UserController::class, 'postLogin']);

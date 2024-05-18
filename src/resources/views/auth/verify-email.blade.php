@@ -1,47 +1,30 @@
-<x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
+<!-- resources/views/auth/verify-email.blade.php -->
 
-        <div class="mb-4 text-sm text-gray-600">
-        ご登録ありがとうございます！<br>
-        ご入力いただいたメールアドレスへ認証リンクを送信しましたので、クリックして認証を完了させてください。<br>
-        もし、認証メールが届かない場合は再送させていただきます。
-        </div>
+@extends('layouts.app')
 
-        @if (session('status') == 'verification-link-sent')
-            <div class="mb-4 font-medium text-sm text-green-600">
-            新しい認証メールが送信されました。
-            </div>
-        @endif
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
 
-        <div class="mt-4 flex items-center justify-between">
-            <form method="POST" action="{{ route('verification.send') }}">
-                @csrf
+                <div class="card-body">
+                    @if (session('resent'))
+                    <div class="alert alert-success" role="alert">
+                        {{ __('A fresh verification link has been sent to your email address.') }}
+                    </div>
+                    @endif
 
-                <div>
-                    <x-jet-button type="submit">
-                       認証メールを再送する
-                    </x-jet-button>
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }},
+                    <form class="d-inline" method="POST" action="{{ route('verification.send') }}">
+                        @csrf
+                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                    </form>
                 </div>
-            </form>
-
-            <div>
-                <a
-                    href="{{ route('profile.show') }}"
-                    class="underline text-sm text-gray-600 hover:text-gray-900"
-                >
-                    {{ __('Edit Profile') }}</a>
-
-                <form method="POST" action="{{ route('logout') }}" class="inline">
-                    @csrf
-
-                    <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900 ml-2">
-                       ログアウト
-                    </button>
-                </form>
             </div>
         </div>
-    </x-jet-authentication-card>
-</x-guest-layout>
+    </div>
+</div>
+@endsection

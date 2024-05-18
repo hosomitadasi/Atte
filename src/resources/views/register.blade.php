@@ -3,7 +3,7 @@
 @section('content')
 @if (session('result'))
 <div class="flash_message">
-    {{ session('result') }}
+ 
 </div>
 @endif
 
